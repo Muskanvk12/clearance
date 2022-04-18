@@ -1,0 +1,67 @@
+<!-- {% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Staff Login</title>
+	<link rel="stylesheet" href="{% static 'teacher/css/stflogin.css' %}" />
+  <--<link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+	<main id="loginform">
+
+		<div class="loginCard" id="studentCard">
+			<h1 class="loginHeading">Staff Login</h1>
+			<form class="loginForm" method="POST" novalidate>
+				{% csrf_token %}
+				{% for f in form %}
+				{{f}}
+				{% for msg in messages %}
+				<span>{{msg}}</span>
+				{% endfor %}
+				{% endfor %}
+				<br>
+				<button id="loginajx" class="loginButton"> Login</button>
+			</form>
+		</main>
+</body>
+
+</html> -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Staff Login</title>
+	<link rel="stylesheet" href="{% static 'teacher/css/stafflogin.css' %}" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap" rel="stylesheet" />
+
+</head>
+
+<body>
+	<main id="loginform">
+
+		<div class="loginCard" id="studentCard">
+			<h1 class="loginHeading">Staff Login</h1>
+			<form class="loginForm" method="POST" novalidate>
+				{% csrf_token %}
+				{% for f in form %}
+				{{f}}
+				{% for msg in messages %}
+				<span>{{msg}}</span>
+				{% endfor %}
+				{% endfor %}
+				<br>
+				<button id="loginajx" class="loginButton"> Login</button>
+			</form>
+	</main>
+</body>
+
+</html>

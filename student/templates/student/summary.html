@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Summary</title>
+	<link rel="stylesheet" href="{% static 'student/css/summarylist.css' %}" />
+	<link rel="stylesheet" href="{% static 'student/css/fontawesome-free-5.15.2-web/css/all.css' %}" />
+
+</head>
+
+<body>
+	<header id="header">
+		<div id="collegeLogo">
+			<img src="http://www.nit.edu.in/img/logo_2x.png" alt="NIT Logo" />
+			<h1 id="title">Nagpur Institute of Technology</h1>
+		</div>
+	</header>
+	<main>
+		<div style="font-family: 'Nunito Sans', sans-serif" id="headings" class="cardForm">
+			<p>Sr No.</p>
+			<p>Name</p>
+			<p>Roll no.</p>
+			<p>Sem</p>
+			<p>Dept</p>
+			<p>Year</p>
+			<p>HOD</p>
+			<p>SEPM</p>
+			<p>FE</p>
+			<p>DP</p>
+			<p>AI</p>
+			<p>CN</p>
+			<p>Account</p>
+			<p>Library</p>
+			<p>Scholarship</p>
+			<p>Sport</p>
+			<p>NCC</p>
+			<p>NSS</p>
+
+		</div>
+		<div class="rows">
+			{% for data in summary %}
+			<div class="facultyCard">
+				<p>{{forloop.counter}}</p>
+				<p>{{data.name}}</p>
+				<p>{{data.roll}}</p>
+				<p>{{data.sem}}</p>
+				<p>CSE</p>
+				<p>{{data.year}}</p>
+				<p>{{data.hod}}</p>
+				<p>{{data.sepm}}</p>
+				<p>{{data.fe}}</p>
+				<p>{{data.dp}}</p>
+				<p>{{data.ai}}</p>
+				<p>{{data.cn}}</p>
+				<p>{{data.acc}}</p>
+				<p>{{data.lib}}</p>
+				<p>{{data.scholar}}</p>
+				<p>{{data.sports}}</p>
+				<p>{{data.ncc}}</p>
+				<p>{{data.nss}}</p>
+
+			</div>
+			{% endfor %}
+		</div>
+	</main>
+
+</body>
+
+</html>

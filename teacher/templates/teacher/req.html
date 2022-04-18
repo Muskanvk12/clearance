@@ -1,0 +1,77 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Request</title>
+	<link rel="stylesheet" href="{% static 'teacher/css/rqst.css' %}">
+	<link rel="stylesheet" href="{% static 'teacher/css/fontawesome-free-5.15.2-web/css/all.css' %}" />
+
+</head>
+
+<body>
+	<div class="area">
+		<ul class="circles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<header id="header">
+		<div id="collegeLogo">
+			<img src="http://www.nit.edu.in/img/logo_2x.png" alt="NIT Logo" />
+			<h1 id="title">Nagpur Institute of Technology</h1>
+		</div>
+	</header>
+	<main>
+		<div style="font-family: 'Nunito Sans', sans-serif" id="headings" class="cardForm">
+			<p>Serial No.</p>
+			<p>Name</p>
+			<p>Roll</p>
+			<p>Semester</p>
+			<p>Department</p>
+			<p>Year</p>
+			<p>Accept</p>
+			<p>Reject</p>
+		</div>
+		<div class="rows">
+			{% for i in data %}
+			<div class="facultyCard">
+				<p>{{forloop.counter}}</p>
+				<p>{{i.name}}</p>
+				<p>{{i.roll}}</p>
+				<p>{{i.sem}}</p>
+				<p>{{i.dept}}</p>
+				<p>{{i.year}}</p>
+
+				<form method="POST" action="{% url 'activate' i.stud.id %}">
+					{% csrf_token %}
+					<input class="btn-request" type="submit" name="" value="Accept">
+					<input type="text" value="{{i.stud.id}}" name="studid" hidden>
+				</form>
+
+
+				<form method="POST" action="{% url 'reject' i.stud.id %}">
+					{% csrf_token %}
+					<input class="btn-request" type="submit" name="" value="Reject">
+					<input type="text" value="{{i.stud.id}}" name="studid" hidden>
+				</form>
+
+			</div>
+			{% endfor %}
+
+		</div>
+	</main>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+* {
+  margin: 0px;
+  padding-left: 0px;
+  box-sizing: border-box;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(125deg, #1a222b, #19262b);
+  font-family: "Quicksand", sans-serif;
+}
+
+#about {
+  display: none;
+  text-decoration: none;
+  font-size: 2vw;
+  color: white;
+  position: absolute;
+  top: 5%;
+  left: 90%;
+}
+
+.normal {
+  height: 72vh;
+  background: url("bg_img.jpg");
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-position: center;
+  background-position: top;
+  background-size: cover;
+  /* color: white; */
+}
+
+.hovered {
+  height: 55vh;
+  display: flex;
+  flex-direction: column;
+  background: url("bg_imghovered.jpg"), rgba(12, 14, 14, 0.685);
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-position: center;
+  background-size: cover;
+  color: white;
+}
+
+.normal #collegeLogo {
+  display: flex;
+  flex-direction: column;
+}
+
+.hovered #collegeLogo {
+  display: flex;
+  /* flex-direction: column; */
+  margin: 3vh 10vh;
+  font-family: "Nunito", sans-serif;
+}
+
+.normal img {
+  height: 22vh;
+  width: 24vh;
+  margin: 25vh auto 6vh auto;
+}
+
+.hovered img {
+  height: 8vw;
+  width: 10vw;
+}
+
+.normal #clgname {
+  display: none;
+  margin: auto;
+  font-size: 40px;
+}
+
+.hovered #clgname {
+  margin: 3vh 5vh;
+  font-size: 35px;
+  font-size: 1.8vw;
+}
+
+.normal #title {
+  display: none;
+}
+
+.hovered #title {
+  margin: 20vh auto;
+  font-size: 2.3vw;
+}
+
+#buttons {
+  margin: 10vh auto;
+}
+
+.btn {
+  width: 200px;
+  margin: 0px 50px;
+  padding: 16px;
+  font-size: 17px;
+  border: 0.1px solid rgba(255, 255, 255, 0.452);
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  background-color: #4aa0c241;
+  color: white;
+  filter: blur(0.5px);
+  letter-spacing: 2px;
+  transition: ease-in-out;
+  transition-delay: 0.1s;
+}
+
+.btn:hover {
+  box-shadow: 0 1px 15px rgba(135, 224, 219, 0.884);
+  background-color: #4aa0c233;
+  border: 2px solid rgba(135, 224, 219, 0.884);
+}
+
+.icons {
+  display: none;
+  width: 20vw;
+  /* display: flex; */
+  position: absolute;
+  top: 28%;
+  left: 40%;
+  justify-content: space-evenly;
+}
+
+.icons i {
+  color: #82bed6f8;
+
+  /* margin: 20px; */
+}

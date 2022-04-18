@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <!-- style -->
+    <link rel="stylesheet" href="{% static 'student/css/std.css' %}" />
+    <link rel="stylesheet" href="{% static 'student/css/fontawesome-free-5.15.2-web/css/all.css' %}" />
+
+
+</head>
+
+<body>
+    <div id="main-page">
+        <header id="header">
+            <div id="collegeLogo">
+                <img src="http://www.nit.edu.in/img/logo_2x.png" alt="NIT Logo" />
+                <h1 id="title">Nagpur Institute of Technology</h1>
+            </div>
+            <div id="profileIcon">
+                <i id="icon-button" class="fas fa-user-circle fa-3x"></i>
+                <nav id="nav-menu" class="hidden">
+                    <h1>{{user.first_name}} {{user.last_name}}</h1>
+                    <h1>{{user.username}}</h1>
+                    <a class=" nav-link" href="{% url 'logout' %}" title="Logout">Logout</a>
+                </nav>
+            </div>
+
+
+        </header>
+        <section id="warning">
+            <h1>Update Your Profile Before Requesting Clearance</h1>
+        </section>
+        <main>
+            <h1 id="name">{{user.first_name}} {{user.last_name}}</h1>
+            <div id="buttons">
+                <a href="{% url 'update' %}"><button class="open-btn">Update Porfile</button></a>
+                <a href="{% url 'list' %}"><button class="open-btn">Request Clearance</button></a>
+                <a href="{% url 'summary' %}"><button class="open-btn">View Clearance list</button></a>
+            </div>
+
+        </main>
+    </div>
+    <!-- <a href="{% url 'list' %}">List</a> -->
+    <!-- <a href="{% url 'update' %}">Update</a> -->
+    <!-- <a href="{% url 'summary' %}">Summary</a> -->
+
+    <script>
+        var nav = document.getElementById("nav-menu");
+
+        function changeClass() {
+            nav.className = "visible";
+        }
+        function changeClassBack() {
+            nav.className = "hidden";
+        }
+        var btn = document.getElementById("icon-button");
+        btn.addEventListener('click', changeClass, false);
+
+    </script>
+</body>
+
+</html>
+<!-- <h1>{{user.first_name}} {{user.last_name}}</h1>
+<h1>{{user.id}}</h1> -->
+<!-- <a href="{% url 'list' %}">List</a>
+<a href="{% url 'update' %}">Update</a>
+<a class="nav-link" href="{% url 'logout' %}" title="Logout">Logout</a>
+<a href="{% url 'summary' %}">Summary</a> -->

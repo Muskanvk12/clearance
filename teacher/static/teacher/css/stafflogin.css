@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  overflow: hidden;
+}
+
+main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  /* padding-top: 30vh; */
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #1c1c25;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+main::before,
+#loginCard::before {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  background: linear-gradient(190deg, rgb(5, 132, 190) 0%, rgb(171, 218, 226));
+  border-radius: 50%;
+}
+
+main::before {
+  top: 25%;
+  left: 56vw;
+}
+
+.loginCard,
+.loginForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginCard {
+  height: 35vh;
+  width: 400px;
+  border-width: 0.1px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.425);
+  border-radius: 12px;
+  padding: 3vh 4vh;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  background-color: rgba(242, 255, 255, 0.123);
+
+  filter: blur(0.2px);
+}
+
+#studentCard {
+  float: right;
+}
+
+.loginCard h1 {
+  margin: 10px auto 40px auto;
+  font-size: 25px;
+}
+
+.loginForm input {
+  width: 290px;
+  padding: 10px;
+  font-size: 16px;
+  margin: 12px auto 12px auto;
+  border: none;
+  border-radius: 50px;
+  background-color: rgba(242, 248, 248, 0.548);
+  color: #251133;
+  outline: none;
+}
+
+.loginForm button {
+  width: 210px;
+  padding: 8px;
+  font-size: 18px;
+  border: none;
+  border-radius: 20px;
+  margin: 25px auto;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  color: #fff;
+  letter-spacing: 1px;
+  transition: ease-in-out;
+  transition-delay: 0.12s;
+}
+
+.loginForm button:hover {
+  background-color: rgba(137, 191, 201, 0.801);
+  color: #1c1c25;
+}
+
+#signUpButton {
+  margin: 0px auto;
+  color: rgb(160, 223, 235);
+}
+
+.loginForm button:hover {
+  transform: rotateX();
+}
